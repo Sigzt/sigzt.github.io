@@ -13,7 +13,7 @@
 </head>
 <body>
 
-  <h2>Morkil me debes 28 pavos</h2>
+  <h2>Morkil me debes 29 pavos</h2>
   
   <div id="output"></div>
   <div>
@@ -31,8 +31,11 @@
     var btn = document.getElementById("1b");
     var mod = document.getElementById("bot");
     var out = document.getElementById("output");
+    var lista = [];
     mod.addEventListener("click", cambiomodo)
     btn.addEventListener("click", getWord);
+    var s = [1,2,3]
+    var l = [4,4,4]
     var sus = [
 'Elijes a dos personas para que se vayan a solas durante 3 minutos (sin móvil), si pasa algo entre ellos, todos los de la otra habitación beben.' ,
 'Tú y otra persona os besais 3 seg, si no 2 trago' ,
@@ -53,6 +56,7 @@
 'Valoras el cuerpo de X del 0 al 10, previamente sin que lo escuches esa persona valorará su propio cuerpo, si coincidís, repartís 10 tragos cada uno' ,
 'El grupo elije quienes se dan un pico (3 tragos)' ,
 'Si te has masturbado hoy, bebes 3 tragos' ,
+      'Paga la coca tercer aviso',
 'CARTA COMODÍN (te puedes quedar la carta y le pasas tu castigo a otro)' ,
 'Vendar los ojos de una persona y hacerla caminar para que bese al primero que toque (4 tragos)' ,
 'Decir qué parte del cuerpo te atrae más de una de las personas del grupo (2 tragos)' ,
@@ -155,16 +159,17 @@
     function getWord(){
      
       if (bot.textContent == "Modo polla" ){
-            lista = ns.concat(sus)
+            lista = s.concat(l)
+            
       }
       else if (bot.textContent == "Modo normal" ){
-            lista = ns
+            lista = s
       }
       
       var wordNum = Math.floor(Math.random() * lista.length);
       
      
-      output.textContent = ns[wordNum];
+      output.textContent = lista[wordNum];
     }
 </script>
 </body>
