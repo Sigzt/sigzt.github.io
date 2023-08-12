@@ -58,6 +58,7 @@ section {
     color: white;
     padding: 15px;
     border-radius: 10px;
+    align-items: center;
     width: 8cm; /* Ancho de 8cm */
     height: 11cm; /* Alto de 11cm */
     margin: 0 auto; /* Centrar la carta */
