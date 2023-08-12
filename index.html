@@ -1,0 +1,62 @@
+<html>
+<head>
+  <title>Morkil puta</title>
+  <style>
+    
+   
+    
+    #output {
+    
+      font-family:fantisy;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>3</h2>
+  <div>
+    <button>2</button>
+  </div>
+  <div>
+   
+  
+
+  <div id="output"></div>
+
+  <script>
+   
+    var btn = document.querySelector("button");
+    var out = document.getElementById("output");
+    var i = 0
+  
+    btn.addEventListener("click", getWord);
+   var theWord= [
+        'dog',
+        'potato',
+        'cow',
+        'parrot',
+        'stone',
+        'watch',
+         'house',
+         'biolumonesance',
+        'brake',
+        'potato/salad',
+        'trip',
+        'hipopotomus',
+        'mask',
+        'chicken',
+        'Pneumonoultramicroscopicsilicovolcanoconiosis',
+      ];
+    function getWord(){
+     
+      
+
+      
+      var wordNum = Math.floor(Math.random() * theWord.length);
+      
+     
+      output.textContent = theWord[wordNum];
+    }
+</script>
+</body>
+</html>
