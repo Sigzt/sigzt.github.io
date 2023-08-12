@@ -53,7 +53,7 @@ section {
 }
 
 /* Mensaje */
-#messageCard {
+#output {
     background-color: black;
     color: white;
     padding: 15px;
