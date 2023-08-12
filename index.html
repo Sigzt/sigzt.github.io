@@ -13,7 +13,7 @@
 </head>
 <body>
 
-  <h2>Morkil me debes 22 pavos</h2>
+  <h2>Morkil me debes 23 pavos</h2>
   
   <div id="output"></div>
   <div>
@@ -33,25 +33,97 @@
     var out = document.getElementById("output");
     mod.addEventListener("click", cambiomodo)
     btn.addEventListener("click", getWord);
-   var theWord= ['Multiplicador de castigo x2', 'Multiplicador de castigo x3', 'Ronda de preguntas', 'El de 
-tu izquierda te pone un reto, 2 tragos penalización', 'Haces una pregunta de tu interés a cualquiera del grupo, si decide no responderla se acaba el cubata', 'Los que lleveis zapatos blancos bebeis 2 tragos', 'Si nadie ha cumplido un reto todavía, le tocan 3 cartas seguidas', 'Las personas con pelo largo beben 2 tragos', 'Las personas que tengan una A en su nombre beben 2 tragos', 'Elije un esclavo, podrás darle tus tragos durante 2 rondas (acumulables)', 
-'Dale 4 tragos a quien te parezca más atractivo', 'Si bebes Ron 1 trago, si bebes Jagger 2, 
-Ginebra 3, Vodka 4 y Whiskey 5', 'TODO EL MUNDO DEJA EL MÓVIL, el primero que reciba un mensaje bebe 5 tragos', 'Le revisas el móvil a quien tu quieras durante 30 segundos, también puede publicar cosas (5 tragos)', 'Bebe 3 tragos si has comparado el pene con el de tus amigos', 'Quien sepa la medida aproximada de su móvil bebe 2 tragos', 'Beben 2 tragos quienes tengan menos de un 50% de bateria', 'Si tu ropa interior es negra bebes 2 tragos', 'El dueño de la casa reparte 4 tragos (si estamos en la calle bebemos todos 1 trago)', 'Quien tenga los ojos azules reparte 3 tragos', 'Tú y el de la derecha subís una foto juntos, si no 3 tragos', 
-'Mira la hora, suma todos los dígitos y bebes ese número de tragos (Puedes repartir los tragos si la otra persona acepta tus tragos)', 'Bebe 8 tragos si estás en una relación', 'La persona con el vaso más lleno, bebe 4 tragos', 'Intercambias tu vaso con el de delante', 'Beben 4 tragos las personas que pesen más de 80kg', 'Bebes un trago por cada vocal de tu apellido', 'Debes beber 5 tragos mientras X te sopla la oreja', 'El jugador de la izquierda del que 
-lee bebe 3 tragos', 'Nombra un accesorio, quien lo lleve puesto bebe 2 tragos', 'Quien lleve un paquete de cigarrillos encima, bebe 1 trago por cada cigarrillo en la caja', 'Acabate la copa mientras los demás jugadores recitan el alfabeto letra por letra, si te acabas antes la copa, repartes 10 tragos', 'Enseñas tu último mensaje de whatssap, el número de palabras son tragos que repartes (no valen conectores)', 'Divididos en dos grupos: rizados y lisos. El grupo más pequeño bebe 3 tragos por persona', 'Si alguna vez le has jodido el polvo o lío a un amigo bebes 3 tragos', 'Si te has masturbado hoy, bebes 3 tragos', 'Sirve las copas de todo el mundo durante 7 rondas !!!', 'Elije a un compi, cada vez que uno beba el otro también lo hará (3 turnos)', 'CARTA COMODÍN (te puedes quedar la carta y le pasas tu castigo a otro)', 'El próximo que hable bebe 7 tragos', 'DEMOCRACIA: Votad quien bebe y cuanto bebe', 'Lo 
-paso y lo duplico a la siguiente persona (Se puede guardar)', 'BOMBA: +5 tragos a quien tú elijas (Se puede guardar)', 'BOMBETA: +3 tragos a quien tú elijas (Se puede guardar)', 'Ángel Sael: Te reduce a la mitad tus tragos (Se puede guardar)', 'Xupitet: Todos un chupito (No valen comodines)', 'Demonio Destra: Multiplicador de castigo x2 a una persona (Se puede guardar)', 'Llama a tu última pareja y dile que le echas de menos o 6 tragos', 'Ponen una canción, si no sabes como continua al pararla, bebes 4 tragos', '', '', '', 'YO NUNCA: ', '-Yo nunca me he masturbado pensando en uno de los presentes', '-Yo nunca le he escrito borracho a alguien que me quiera tirar', '-Yo nunca me he inventado que me he follado a alguien', '-Yo nunca me he masturbado/follado en casa de un amigo', '-Yo nunca he intentado encontrar a un@ actor/actriz que se parezca a mi crush', '-Yo nunca me he masturbado con condón', '-Yo nunca 
-he tenido sexo con personas de 3 continentes distintos o más', '-Yo nunca he pensado que es 
-mejor masturbarme que follar', '-Yo nunca he tenido corrida en el pelo', '-Yo nunca he follado en un tren', '-Yo nunca me he quedado dormid@ mientras follaba', '-Yo nunca he conducido 
-borracho', '-Yo nunca he dudado de mi sexualidad', '-Yo nunca he acabado en el hospital por 
-pasarme bebiendo', '-Yo nunca me he meado el pie o encima por ir borracho', '-Yo nunca he tenido un gatillazo', '-Yo nunca he estado 1 año o más sin follar', '-Yo nunca he follado en el gimnasio', '-Yo nunca le he mirado el móvil a mi pareja sin su permiso', '-Yo nunca he follado durante 2h seguidas o más', '-Yo nunca he follado en los baños de una discoteca', '-Yo 
-nunca he vomitado en la bañera', '-Yo nunca he usado comida durante el sexo', '-Yo nunca he 
-buscado tutoriales de liarse o follar', '-Yo nunca le he puesto los cuernos a alguien', '-Yo nunca he sido el amante', '', '', 'Preguntas y votaciones', '-¿Cual es tu mayor secreto?', 
-'-¿Alguna vez has pensado en engañar a tu pareja?¿Lo has hecho?', '-¿Cual es el sitio más raro en el que has follado?', '-¿Alguna vez te has olvidado del nombre de la persona con la que te has acostado?', '-¿Cuál es el peor sexo que has tenido en tu vida?', '-¿Con qué dos personas de aquí harías un trío?', '-¿Cual es la cosa más rara que te has metido? (no drogas)', '-¿Cuanto llevas sin follar?'];
+   var theWord= [
+'Multiplicador de castigo x2' ,
+'Multiplicador de castigo x3' ,
+'Ronda de preguntas' ,
+'El de tu izquierda te pone un reto, 2 tragos penalización' ,
+'Haces una pregunta de tu interés a cualquiera del grupo, si decide no responderla se acaba el cubata' ,
+'Los que lleveis zapatos blancos bebeis 2 tragos' ,
+'Si nadie ha cumplido un reto todavía, le tocan 3 cartas seguidas' ,
+'Las personas con pelo largo beben 2 tragos' ,
+'Las personas que tengan una A en su nombre beben 2 tragos' ,
+'Elije un esclavo, podrás darle tus tragos durante 2 rondas (acumulables)' ,
+'Dale 4 tragos a quien te parezca más atractivo' ,
+'Si bebes Ron 1 trago, si bebes Jagger 2, Ginebra 3, Vodka 4 y Whiskey 5' ,
+'TODO EL MUNDO DEJA EL MÓVIL, el primero que reciba un mensaje bebe 5 tragos' ,
+'Le revisas el móvil a quien tu quieras durante 30 segundos, también puede publicar cosas (5 tragos)' ,
+'Bebe 3 tragos si has comparado el pene con el de tus amigos' ,
+'Quien sepa la medida aproximada de su móvil bebe 2 tragos' ,
+'Beben 2 tragos quienes tengan menos de un 50% de bateria' ,
+'Si tu ropa interior es negra bebes 2 tragos' ,
+'El dueño de la casa reparte 4 tragos (si estamos en la calle bebemos todos 1 trago)' ,
+'Quien tenga los ojos azules reparte 3 tragos' ,
+'Tú y el de la derecha subís una foto juntos, si no 3 tragos' ,
+'Mira la hora, suma todos los dígitos y bebes ese número de tragos (Puedes repartir los tragos si la otra persona acepta tus tragos)' ,
+'Bebe 8 tragos si estás en una relación' ,
+'La persona con el vaso más lleno, bebe 4 tragos' ,
+'Intercambias tu vaso con el de delante' ,
+'Beben 4 tragos las personas que pesen más de 80kg' ,
+'Bebes un trago por cada vocal de tu apellido' ,
+'Debes beber 5 tragos mientras X te sopla la oreja' ,
+'El jugador de la izquierda del que lee bebe 3 tragos' ,
+'Nombra un accesorio, quien lo lleve puesto bebe 2 tragos' ,
+'Quien lleve un paquete de cigarrillos encima, bebe 1 trago por cada cigarrillo en la caja' ,
+'Acabate la copa mientras los demás jugadores recitan el alfabeto letra por letra, si te acabas antes la copa, repartes 10 tragos' ,
+'Enseñas tu último mensaje de whatssap, el número de palabras son tragos que repartes (no valen conectores)' ,
+'Divididos en dos grupos: rizados y lisos. El grupo más pequeño bebe 3 tragos por persona' ,
+'Si alguna vez le has jodido el polvo o lío a un amigo bebes 3 tragos' ,
+'Si te has masturbado hoy, bebes 3 tragos' ,
+'Sirve las copas de todo el mundo durante 7 rondas !!!' ,
+'Elije a un compi, cada vez que uno beba el otro también lo hará (3 turnos)' ,
+'CARTA COMODÍN (te puedes quedar la carta y le pasas tu castigo a otro)' ,
+'El próximo que hable bebe 7 tragos' ,
+'DEMOCRACIA: Votad quien bebe y cuanto bebe' ,
+'Lo paso y lo duplico a la siguiente persona (Se puede guardar)' ,
+'BOMBA: +5 tragos a quien tú elijas (Se puede guardar)' ,
+'BOMBETA: +3 tragos a quien tú elijas (Se puede guardar)' ,
+'Ángel Sael: Te reduce a la mitad tus tragos (Se puede guardar)' ,
+'Xupitet: Todos un chupito (No valen comodines)' ,
+'Demonio Destra: Multiplicador de castigo x2 a una persona (Se puede guardar)' ,
+'Llama a tu última pareja y dile que le echas de menos o 6 tragos' ,
+'Ponen una canción, si no sabes como continua al pararla, bebes 4 tragos' ,
+'-Yo nunca me he masturbado pensando en uno de los presentes' ,
+'-Yo nunca le he escrito borracho a alguien que me quiera tirar' ,
+'-Yo nunca me he inventado que me he follado a alguien' ,
+'-Yo nunca me he masturbado/follado en casa de un amigo' ,
+'-Yo nunca he intentado encontrar a un@ actor/actriz que se parezca a mi crush' ,
+'-Yo nunca me he masturbado con condón' ,
+'-Yo nunca he tenido sexo con personas de 3 continentes distintos o más' ,
+'-Yo nunca he pensado que es mejor masturbarme que follar' ,
+'-Yo nunca he tenido corrida en el pelo' ,
+'-Yo nunca he follado en un tren' ,
+'-Yo nunca me he quedado dormid@ mientras follaba' ,
+'-Yo nunca he conducido borracho' ,
+'-Yo nunca he dudado de mi sexualidad' ,
+'-Yo nunca he acabado en el hospital por pasarme bebiendo' ,
+'-Yo nunca me he meado el pie o encima por ir borracho' ,
+'-Yo nunca he tenido un gatillazo' ,
+'-Yo nunca he estado 1 año o más sin follar' ,
+'-Yo nunca he follado en el gimnasio' ,
+'-Yo nunca le he mirado el móvil a mi pareja sin su permiso' ,
+'-Yo nunca he follado durante 2h seguidas o más' ,
+'-Yo nunca he follado en los baños de una discoteca' ,
+'-Yo nunca he vomitado en la bañera' ,
+'-Yo nunca he usado comida durante el sexo' ,
+'-Yo nunca he buscado tutoriales de liarse o follar' ,
+'-Yo nunca le he puesto los cuernos a alguien' ,
+'-Yo nunca he sido el amante' ,
+'Preguntas y votaciones' ,
+'-¿Cual es tu mayor secreto?' ,
+'-¿Alguna vez has pensado en engañar a tu pareja?¿Lo has hecho?' ,
+'-¿Cual es el sitio más raro en el que has follado?' ,
+'-¿Alguna vez te has olvidado del nombre de la persona con la que te has acostado?' ,
+'-¿Cuál es el peor sexo que has tenido en tu vida?' ,
+'-¿Con qué dos personas de aquí harías un trío?' ,
+'-¿Cual es la cosa más rara que te has metido? (no drogas)' ,
+'-¿Cuanto llevas sin follar?' ,
+];
     function cambiomodo() {
-      if (bot.textContent == "Modo polla"){
+      if (bot.textContent == "Modo polla" || bot.textContent == "modo de juego"){
         bot.textContent = "Modo normal"
       }
-      if (bot.textContent == "Modo normal"){
+      if (bot.textContent == "Modo normal" || bot.textContent == "modo de juego"){
         bot.textContent = "Modo polla"
       }
       
