@@ -14,22 +14,26 @@
 <body>
 
   <h2>Morkil me debes 20 pavos</h2>
+  
+  <div id="output"></div>
   <div>
-    <button>pillar carta</button>
-    <button>modo de juego</button>
+    <button id="1b">pillar carta</button>
+    <button id="bot">modo de juego</button>
   </div>
   <div>
    
   
 
-  <div id="output"></div>
+  
 
   <script>
    
-    var btn = document.querySelector("button");
+    var btn = document.getElementById("1b");
+    var mod = document.getElementById("bot");
     var out = document.getElementById("output");
+    
     var i = 0
-  
+    mod.addEventListener("click", cambiomodo)
     btn.addEventListener("click", getWord);
    var theWord= [
         'dog',
@@ -48,6 +52,9 @@
         'chicken',
         'Pneumonoultramicroscopicsilicovolcanoconiosis',
       ];
+    function cambiomodo() {
+      bot.textContent = "polla"
+    }
     function getWord(){
      
       
