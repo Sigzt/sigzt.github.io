@@ -1,0 +1,21 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<h1>Hola!</h1>
+<p>esto es una prueba de canvas en js</p>
+<canvas id='lienzo' width="400" heigth="400" style="border:1px solid #000000;"></canvas>
+<p> </p>
+<a href='index.html'> volver</a>
+</body>
+</html>
+<script>
+var c = document.getElementById("lienzo");
+var ctx = c.getContext("2d");
+ctx.moveTo(0, 0);
+ctx.lineTo(200, 100);
+ctx.stroke();
+</script>
