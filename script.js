@@ -61,7 +61,7 @@ function f(x,y,vx,vy,span){
 }
 
 function init(){
-    for(let i =0;i< 700;i++){
+    for(let i =0;i< 500;i++){
         sistema.push(new Particula(Math.random()*canvas.width,Math.random()*canvas.height,200+Math.random()*430));
     }
 }
