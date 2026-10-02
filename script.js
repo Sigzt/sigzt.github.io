@@ -40,8 +40,8 @@ class Particula {
     }
 }
 function f(x,y,vx,vy,span){
-    let k = 2000;
-    let c = 0.0001;
+    let k = 20000;
+    let c = 0.001;
     let mu = 100/span;
     dx = x-700;
     dy = y-500;
