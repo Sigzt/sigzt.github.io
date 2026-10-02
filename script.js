@@ -42,7 +42,7 @@ class Particula {
 function f(x,y,vx,vy,span){
     let k = 20000;
     let c = 0.001;
-    let mu = 100/span;
+    let mu = 10000/span;
     dx = x-700;
     dy = y-500;
     d = Math.sqrt(dx**2+dy**2);
