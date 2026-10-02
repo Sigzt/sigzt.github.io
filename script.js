@@ -24,7 +24,7 @@ class Particula {
         this.y += this.vy;
         this.vx += a[0];
         this.vy += a[1];
-        this.span -= .005;
+        this.span -= .015;
         if (this.span < 200){
             this.x= this.ox;
             this.y = this.oy;
@@ -47,7 +47,7 @@ function f(x,y,vx,vy,span){
     dy = y-500;
     d = Math.sqrt(dx**2+dy**2);
     si = Math.sign(d-250);
-    if((d<270)&(d>230)){
+    if((d<275)&(d>225)){
         si = 0;
     }
     if(d<20){
@@ -55,8 +55,9 @@ function f(x,y,vx,vy,span){
     }
     modv = Math.sqrt(vx**2+vy**2);
     drag = modv*span*c;
-    fx = -k/(d**3)*si*dx-drag*vx;
-    fy = -k/(d**3)*si*dy-drag*vy;
+    dcub = d**3
+    fx = -k/(dcub)*si*dx-drag*vx;
+    fy = -k/(dcub)*si*dy-drag*vy;
     return [fx*(mu),fy*(mu)]
 }
 
