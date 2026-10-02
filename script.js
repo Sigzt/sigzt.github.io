@@ -32,7 +32,7 @@ class Particula {
         }
     }
     draw(){
-        ctx.fillStyle = "Blue";
+        ctx.fillStyle = "rgb(30, 121, 224)";
         ctx.beginPath();
         ctx.arc(this.x,this.y,this.span/100,0,2*Math.PI);
         ctx.closePath();
@@ -67,8 +67,8 @@ function init(){
     }
 }
 function animate(){
-    //ctx.fillStyle = "rgba(255,255,255,0.5)";
-    //ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle = "rgba(245,245,220,0.5)";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
     for(let i = 0; i< sistema.length; i++){
         sistema[i].update();
         sistema[i].draw();
