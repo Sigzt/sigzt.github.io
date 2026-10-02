@@ -3,7 +3,7 @@ const ctx = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-const n = 100;
+
 let sistema = [];
 
 class Particula {
@@ -47,7 +47,7 @@ function f(x,y,vx,vy,span){
     dy = y-500;
     d = Math.sqrt(dx**2+dy**2);
     si = Math.sign(d-250);
-    if((d<275)&(d>225)){
+    if((d<270)&(d>230)){
         si = 0;
     }
     if(d<20){
