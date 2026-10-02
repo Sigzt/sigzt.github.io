@@ -34,7 +34,7 @@ class Particula {
     draw(){
         ctx.fillStyle = "Blue";
         ctx.beginPath();
-        ctx.arc(this.x,this.y,4,0,2*Math.PI);
+        ctx.arc(this.x,this.y,4,this.span/100,2*Math.PI);
         ctx.closePath();
         ctx.fill();
     }
@@ -62,7 +62,7 @@ function f(x,y,vx,vy,span){
 }
 
 function init(){
-    for(let i =0;i< 500;i++){
+    for(let i =0;i< 400;i++){
         sistema.push(new Particula(Math.random()*canvas.width,Math.random()*canvas.height,200+Math.random()*430));
     }
 }
