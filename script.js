@@ -62,13 +62,13 @@ function f(x,y,vx,vy,span){
 }
 
 function init(){
-    for(let i =0;i< 1500;i++){
+    for(let i =0;i< 400;i++){
         sistema.push(new Particula(Math.random()*canvas.width,Math.random()*canvas.height,200+Math.random()*430));
     }
 }
 function animate(){
-    ctx.fillStyle = "rgba(255,255,255,0.5)";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
+    //ctx.fillStyle = "rgba(255,255,255,0.5)";
+    //ctx.fillRect(0,0,canvas.width,canvas.height);
     for(let i = 0; i< sistema.length; i++){
         sistema[i].update();
         sistema[i].draw();
