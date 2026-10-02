@@ -20,8 +20,8 @@ export class Particula {
         let dx = x-canvas.width*0.33;
         let dy = y-canvas.height*0.5;
         let d = Math.sqrt(dx**2+dy**2);
-        let si = Math.sign(d-250);
-        if((d<270)&(d>230)){
+        let si = Math.sign(d-230);
+        if((d<250)&(d>210)){
             si = 0;
         }
         if(d<20){
