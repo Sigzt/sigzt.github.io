@@ -13,8 +13,8 @@ class Particula {
         this.ox = x;
         this.oy = y;
         this.span = span;
-        this.vx = Math.random()*5;
-        this.vy = Math.random()*5;
+        this.vx = Math.random();
+        this.vy = Math.random();
     }
     update(){
         let a = f(this.x,this.y,this.vx, this.vy,this.span);
