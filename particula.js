@@ -1,3 +1,5 @@
+const canvas = document.getElementById("canvas1");
+const ctx = canvas.getContext("2d");
 export class Particula {
     constructor(x,y,span){
         this.x = x;
@@ -15,8 +17,8 @@ export class Particula {
         let k = 2000;
         let c = 0.00001;
         let mu = 100/span;
-        let dx = x-700;
-        let dy = y-500;
+        let dx = x-canvas.width*0.33;
+        let dy = y-canvas.height*0.5;
         let d = Math.sqrt(dx**2+dy**2);
         let si = Math.sign(d-250);
         if((d<270)&(d>230)){
@@ -46,24 +48,22 @@ export class Particula {
             this.span = 200+Math.random()*430;
         }
 
-        if (this.x > 1920){
+        if (this.x > canvas.width){
             this.x = 0;
         }
         if (this.x < 0){
-            this.x = 1920;
+            this.x = canvas.width;
         }
-        if (this.y > 1000){
+        if (this.y > canvas.height){
             this.y = 0;
         }
         if (this.y < 0){
-            this.y = 1000;
+            this.y = canvas.height;
         }
     }
 
 
-    draw(){
-        const canvas = document.getElementById("canvas1");
-        const ctx = canvas.getContext("2d");
+    draw(){        
         ctx.fillStyle = "rgb(30, 121, 224)";
         ctx.beginPath();
         ctx.arc(this.x,this.y,this.span/100,0,2*Math.PI);
