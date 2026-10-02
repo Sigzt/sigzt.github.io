@@ -24,7 +24,7 @@ class Particula {
         this.y += this.vy;
         this.vx += a[0];
         this.vy += a[1];
-        this.span -= .005;
+        this.span -= .01;
         if (this.span < 200){
             this.x= this.ox;
             this.y = this.oy;
@@ -41,7 +41,7 @@ class Particula {
 }
 function f(x,y,vx,vy,span){
     let k = 2000;
-    let c = 0.00001;
+    let c = 0.0001;
     let mu = 100/span;
     dx = x-700;
     dy = y-500;
@@ -53,7 +53,7 @@ function f(x,y,vx,vy,span){
     if(d<20){
         d = 0.1;   
     }
-    modv = Math.sqrt(vx*vx+vy*vy);
+    modv = Math.sqrt(vx**2+vy**2);
     drag = modv*span*c;
     fx = -k/(d**3)*si*dx-drag*vx;
     fy = -k/(d**3)*si*dy-drag*vy;
@@ -61,7 +61,7 @@ function f(x,y,vx,vy,span){
 }
 
 function init(){
-    for(let i =0;i< 1500;i++){
+    for(let i =0;i< 700;i++){
         sistema.push(new Particula(Math.random()*canvas.width,Math.random()*canvas.height,200+Math.random()*430));
     }
 }
