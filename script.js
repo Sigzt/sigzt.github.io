@@ -28,6 +28,18 @@ class Particula {
             this.y = this.oy;
             this.span = 200+Math.random()*430;
         }
+        if (this.x > 1920){
+            this.x = 0;
+        }
+        if (this.x < 0){
+            this.x = 1920;
+        }
+        if (this.y > 1000){
+            this.y = 0;
+        }
+        if (this.y < 0){
+            this.y = 1000;
+        }
     }
     draw(){
         ctx.fillStyle = "rgb(30, 121, 224)";
