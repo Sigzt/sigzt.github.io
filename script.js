@@ -34,7 +34,7 @@ class Particula {
     draw(){
         ctx.fillStyle = "Blue";
         ctx.beginPath();
-        ctx.arc(this.x,this.y,this.span/100,0,2*Math.PI);
+        ctx.arc(this.x,this.y,4,0,2*Math.PI);
         ctx.closePath();
         ctx.fill();
     }
@@ -53,8 +53,9 @@ function f(x,y,vx,vy,span){
     if(d<20){
         d = 0.1;   
     }
-    modv = Math.sqrt(vx**2+vy**2);
-    drag = modv*span*c;
+    //modv = Math.sqrt(vx**2+vy**2);
+    //drag = modv*span*c;
+    drag = 1*span*c;
     fx = -k/(d**3)*si*dx-drag*vx;
     fy = -k/(d**3)*si*dy-drag*vy;
     return [fx*(mu),fy*(mu)]
