@@ -12,8 +12,6 @@ class Particula {
         this.y = y;
         this.ox = x;
         this.oy = y;
-        this.size = 10;
-        this.mass = 1;
         this.span = span;
         this.vx = 0;
         this.vy = 0;
