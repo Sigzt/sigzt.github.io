@@ -9,30 +9,38 @@ export class Particula {
         this.size = 10;
         this.mass = 1;
         this.span = span;
-        this.vx = Math.random()*0.5;
-        this.vy = Math.random()*0.5;
+        this.vx = Math.random()*0.1;
+        this.vy = Math.random()*0.1;
     }
-
+    
     f(x,y,vx,vy,span){
-        let k = 2000;
-        let c = 0.00001;
-        let mu = 100/span;
-        let dx = x-canvas.width*0.33;
-        let dy = y-canvas.height*0.5;
-        let d = Math.sqrt(dx**2+dy**2);
-        let si = Math.sign(d-230);
-        if((d<250)&(d>210)){
-            si = 0;
+        const k = 2000,c = 0.0001, mu = 100/span;
+        const cx = canvas.width*0, cy = canvas.height*0.5;
+        const N = 2;
+        let fy = 0, fx = 0;
+        for(let i = -N; i<=N; i++){
+            for(let j= -N; j<=N; j++){
+                const dx = x - cx - i*canvas.width;
+                const dy = y - cy - j*canvas.height;
+                const d = Math.hypot(dx,dy);
+
+                let si = Math.sign(d-230);
+                if (d>210 && d<250) si = 0;
+
+                const dcub = d**3;
+                fx -= k*dx/dcub*si;
+                fy -= k*dy/dcub*si;
+
+            }
         }
-        if(d<20){
-            d = 0.1;   
-        }
-        let modv = Math.sqrt(vx**2+vy**2);
-        let drag = modv*span*c;
-        let dcub = d**3
-        let fx = -k/(dcub)*si*dx-drag*vx;
-        let fy = -k/(dcub)*si*dy-drag*vy;
-        return [fx*(mu),fy*(mu)]
+
+        const modv = Math.hypot(vx,vy);
+        const drag = modv**2*span*c;
+
+        fx -= drag*vx;
+        fy -= drag*vy;
+        
+        return [fx*mu,fy*mu]
     }
 
     update(){

@@ -9,7 +9,6 @@ const height = canvas.height;
 const imageData = ctx.createImageData(width, height);
 const data = imageData.data;
 function iter (cx,cy,itmax){
-
     let zx = 0.0;
     let zy = 0;
     let i = 0
