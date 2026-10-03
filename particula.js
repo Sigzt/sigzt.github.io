@@ -1,5 +1,6 @@
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
+
 export class Particula {
     constructor(x,y,span){
         this.x = x;
@@ -15,28 +16,22 @@ export class Particula {
     
     f(x,y,vx,vy,span){
         const k = 2000,c = 0.0001, mu = 100/span;
-        const cx = canvas.width*0, cy = canvas.height*0.5;
-        const N = 2;
+        const cx = canvas.width*0.33, cy = canvas.height*0.5;
+        const N = 1;
         let fy = 0, fx = 0;
         for(let i = -N; i<=N; i++){
             for(let j= -N; j<=N; j++){
-                const dx = x - cx - i*canvas.width;
-                const dy = y - cy - j*canvas.height;
+                const dx = x - cx - i*canvas.width, dy = y - cy - j*canvas.width;
                 const d = Math.hypot(dx,dy);
-
                 let si = Math.sign(d-230);
                 if (d>210 && d<250) si = 0;
-
                 const dcub = d**3;
                 fx -= k*dx/dcub*si;
                 fy -= k*dy/dcub*si;
-
             }
         }
-
         const modv = Math.hypot(vx,vy);
         const drag = modv**2*span*c;
-
         fx -= drag*vx;
         fy -= drag*vy;
         

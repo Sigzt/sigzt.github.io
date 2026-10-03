@@ -10,7 +10,7 @@ const imageData = ctx.createImageData(width, height);
 const data = imageData.data;
 function iter (cx,cy,itmax){
     let zx = 0.0;
-    let zy = 0;
+    let zy = 0.0;
     let i = 0
     while( (i< itmax) && (zx**2+zy**2 < 5)){
         let a = zx**2 - zy**2 + cx;
@@ -40,3 +40,29 @@ for (let x = 0; x < width; x++) {
 
 
 ctx.putImageData(imageData, 0, 0);
+
+function getCursorPosition(canvas, event) {
+    const rect = canvas.getBoundingClientRect()
+    const x = event.clientX - rect.left, y = event.clientY - rect.top;
+    const cx = (x/width-0.7)*4, cy = (y/width-0.5)*4;
+    let rx = x,ry = y;
+    let sx = cx,sy = cy;
+    for(let i = 0; i< 20;i++){
+        ctx.strokeStyle = "Blue";
+        ctx.beginPath();
+        ctx.moveTo(rx,ry)
+        let a = sx**2 - sy**2 + cx;
+        sy = 2*sx*sy + cy;
+        sx = a;
+        rx = width*(sx/4+0.7);
+        ry = height*(sy/4+0.5)
+        ctx.lineTo(rx,ry);
+        
+        ctx.stroke();
+    }
+}
+
+
+canvas.addEventListener('mousedown', function(e) {
+    getCursorPosition(canvas, e)
+})
