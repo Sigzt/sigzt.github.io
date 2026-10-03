@@ -17,11 +17,13 @@ export class Particula {
     f(x,y,vx,vy,span){
         const k = 2000,c = 0.0001, mu = 100/span;
         const cx = canvas.width*0.33, cy = canvas.height*0.5;
+        const L = Math.max(canvas.width,canvas.height);
         const N = 1;
         let fy = 0, fx = 0;
         for(let i = -N; i<=N; i++){
             for(let j= -N; j<=N; j++){
-                const dx = x - cx - i*canvas.width, dy = y - cy - j*canvas.width;
+                
+                const dx = x - cx - i*L, dy = y - cy - j*L;
                 const d = Math.hypot(dx,dy);
                 let si = Math.sign(d-230);
                 if (d>210 && d<250) si = 0;
