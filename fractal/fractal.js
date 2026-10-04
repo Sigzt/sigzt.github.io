@@ -5,18 +5,41 @@ canvas.height = window.innerHeight;
 const width = canvas.width;
 const height = canvas.height;
 
+let tipo = 1;
 
+function main(){
 const imageData = ctx.createImageData(width, height);
 const data = imageData.data;
+
+
 function iter (cx,cy,itmax){
     let zx = 0.0;
     let zy = 0.0;
     let i = 0
+    if (tipo == 1){
     while( (i< itmax) && (zx**2+zy**2 < 5)){
         let a = zx**2 - zy**2 + cx;
         zy = 2*zx*zy + cy;
         zx = a;
         i++
+    }
+    }  
+     if (tipo == 0 ){
+    while( (i< itmax) && (zx**2+zy**2 < 5)){
+        let a = zx**2 - zy**2 + cx;
+        zy = 2*Math.abs(zx*zy) + cy;
+        zx = a;
+        i++
+    }
+    } 
+    if (tipo == 2 ){
+    while( (i< itmax) && (zx**2+zy**2 < 5)){
+        let a = zx**2 + zy**2 ;
+        if (a == 0) a= 0.0000001;
+        zx = zx/a + cx;
+        zy = -zy/a + cy;
+        i++
+    }
     }
     return i
 }
@@ -29,17 +52,20 @@ for (let x = 0; x < width; x++) {
     ny = (y/height-0.5)*4;
     res = iter(nx,ny,itmax);
 
-    data[index]     = res*7;   // R
-    data[index + 1] = res;     // G
-    data[index + 2] = 1;  // B
-    data[index + 3] = 255;   // A (Opaco)
+    data[index]     = res*7;   
+    data[index + 1] = res;     
+    data[index + 2] = 1;  
+    data[index + 3] = 255;   
 
-    index += 4; // Avanzar al siguiente píxel
+    index += 4; 
 }
 }
 
 
 ctx.putImageData(imageData, 0, 0);
+}
+
+main();
 
 function getCursorPosition(canvas, event) {
     const rect = canvas.getBoundingClientRect()
@@ -63,6 +89,11 @@ function getCursorPosition(canvas, event) {
 }
 
 
-canvas.addEventListener('mousedown', function(e) {
-    getCursorPosition(canvas, e)
+
+
+document.getElementById('cambio').addEventListener('click', () => {
+    tipo = (tipo +1)%3;
+    main();
+    
+
 })

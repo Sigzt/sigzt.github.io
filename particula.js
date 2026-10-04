@@ -18,7 +18,7 @@ export class Particula {
         const k = 2000,c = 0.0001, mu = 100/span;
         const cx = canvas.width*0.33, cy = canvas.height*0.5;
         const L = Math.max(canvas.width,canvas.height);
-        const N = 1;
+        const N = 2;
         let fy = 0, fx = 0;
         for(let i = -N; i<=N; i++){
             for(let j= -N; j<=N; j++){
