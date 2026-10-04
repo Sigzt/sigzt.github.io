@@ -1,3 +1,6 @@
+const canvas = document.getElementById("canvas1");
+const ctx = canvas.getContext("2d");
+
 export class Particula {
     constructor(x,y,span){
         this.x = x;
@@ -7,30 +10,34 @@ export class Particula {
         this.size = 10;
         this.mass = 1;
         this.span = span;
-        this.vx = Math.random()*0.5;
-        this.vy = Math.random()*0.5;
+        this.vx = Math.random()*0.1;
+        this.vy = Math.random()*0.1;
     }
-
+    
     f(x,y,vx,vy,span){
-        let k = 2000;
-        let c = 0.00001;
-        let mu = 100/span;
-        let dx = x-700;
-        let dy = y-500;
-        let d = Math.sqrt(dx**2+dy**2);
-        let si = Math.sign(d-250);
-        if((d<270)&(d>230)){
-            si = 0;
+        const k = 2000,c = 0.0001, mu = 100/span;
+        const cx = canvas.width*0.33, cy = canvas.height*0.5;
+        const L = Math.max(canvas.width,canvas.height);
+        const N = 1;
+        let fy = 0, fx = 0;
+        for(let i = -N; i<=N; i++){
+            for(let j= -N; j<=N; j++){
+                
+                const dx = x - cx - i*L, dy = y - cy - j*L;
+                const d = Math.hypot(dx,dy);
+                let si = Math.sign(d-230);
+                if (d>210 && d<250) si = 0;
+                const dcub = d**3;
+                fx -= k*dx/dcub*si;
+                fy -= k*dy/dcub*si;
+            }
         }
-        if(d<20){
-            d = 0.1;   
-        }
-        let modv = Math.sqrt(vx**2+vy**2);
-        let drag = modv*span*c;
-        let dcub = d**3
-        let fx = -k/(dcub)*si*dx-drag*vx;
-        let fy = -k/(dcub)*si*dy-drag*vy;
-        return [fx*(mu),fy*(mu)]
+        const modv = Math.hypot(vx,vy);
+        const drag = modv**2*span*c;
+        fx -= drag*vx;
+        fy -= drag*vy;
+        
+        return [fx*mu,fy*mu]
     }
 
     update(){
@@ -46,24 +53,22 @@ export class Particula {
             this.span = 200+Math.random()*430;
         }
 
-        if (this.x > 1920){
+        if (this.x > canvas.width){
             this.x = 0;
         }
         if (this.x < 0){
-            this.x = 1920;
+            this.x = canvas.width;
         }
-        if (this.y > 1000){
+        if (this.y > canvas.height){
             this.y = 0;
         }
         if (this.y < 0){
-            this.y = 1000;
+            this.y = canvas.height;
         }
     }
 
 
-    draw(){
-        const canvas = document.getElementById("canvas1");
-        const ctx = canvas.getContext("2d");
+    draw(){        
         ctx.fillStyle = "rgb(30, 121, 224)";
         ctx.beginPath();
         ctx.arc(this.x,this.y,this.span/100,0,2*Math.PI);
