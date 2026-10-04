@@ -39,6 +39,7 @@
 }
 
 .linksDesplegados {
+    position: absolute;
     top: var(--y);
     left: var(--x);
     opacity: 1;
