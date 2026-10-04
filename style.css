@@ -19,4 +19,27 @@
     position: absolute;
     top: 50%;
     left: 30%;
+    text-decoration: none;
+    color: black;
+    font-size: x-large;
+    font-weight: 800;
+}
+
+.radioHref {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transition: top 0.4s ease-out, left 0.4s ease-out, opacity 0.3s ease-in;
+    transition-delay: 0.1s;
+    opacity: 0;
+    text-decoration: none;
+    color: rgb(232, 131, 58);
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.linksDesplegados {
+    top: var(--y);
+    left: var(--x);
+    opacity: 1;
 }
